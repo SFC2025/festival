@@ -370,13 +370,13 @@ body.dark footer p {
 
 /* Link del footer (más visible y en naranja) */
 footer p a {
-  color: #f97316;            /* naranja del sitio */
+  color: #f97316; /* naranja del sitio */
   text-decoration: none;
   font-weight: 600;
 }
 
 footer p a:hover {
-  color: #fb923c;            /* naranja más claro al hover */
+  color: #fb923c; /* naranja más claro al hover */
   text-decoration: underline;
 }
 
@@ -618,26 +618,26 @@ body.dark #darkToggle:hover {
 
   /* ===== DARK (solo mobile) ===== */
   body.dark .nav ul {
-    background: #020617;               /* panel oscuro */
+    background: #020617; /* panel oscuro */
     border: 1px solid #1e293b;
     box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
   }
 
   body.dark .nav a {
-    color: #e5e7eb;                    /* links visibles */
+    color: #e5e7eb; /* links visibles */
   }
 
   body.dark .nav a:hover {
-    color: #f97316;                    /* hover naranja (coherente) */
+    color: #f97316; /* hover naranja (coherente) */
   }
 
   body.dark .dropdown .submenu {
-    border-color: #1e293b;             /* borde oscuro del submenú */
-    background: transparent;           /* mismo panel, sin “caja distinta” */
+    border-color: #1e293b; /* borde oscuro del submenú */
+    background: transparent; /* mismo panel, sin “caja distinta” */
   }
 
   body.dark .dropdown .submenu li a:hover {
-    background: #111827;               /* hover dentro del submenú */
+    background: #111827; /* hover dentro del submenú */
   }
 }
 
@@ -1062,4 +1062,59 @@ body.dark .service-card a:hover {
 /* El "ver más" también queda coherente */
 body.dark .card .btn-small {
   color: #93c5fd;
+}
+
+/* ============================
+   EDICIONES (RESPONSIVE)
+   Relacionados abajo en mobile
+   ============================ */
+@media (max-width: 900px) {
+  /* El contenedor que arma 2 columnas pasa a 1 columna */
+  .edicion-container,
+  .edicion-layout,
+  .edicion-grid,
+  .post-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Relacionados baja abajo y ocupa todo el ancho */
+  .relacionados,
+  .related,
+  aside.relacionados {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* Las cards de relacionados: 1 por fila */
+  .relacionados .grid,
+  .related .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================
+   NOTICIAS / EDICIONES (RESPONSIVE)
+   2 columnas -> 1 columna
+   Relacionados abajo
+   ============================ */
+@media (max-width: 900px) {
+  .layout-2col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* aside (Relacionados) baja abajo */
+  .layout-2col > aside {
+    order: 2;
+    width: 100%;
+  }
+
+  /* artículo primero */
+  .layout-2col > article {
+    order: 1;
+    width: 100%;
+  }
 }
