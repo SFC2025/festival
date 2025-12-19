@@ -351,8 +351,8 @@ footer {
 
 /* DARK: que el footer se distinga del resto */
 body.dark footer {
-  background: #020617;              /* más oscuro que el body (#0f172a) */
-  border-top: 1px solid #1e293b;    /* línea de separación */
+  background: #020617; /* más oscuro que el body (#0f172a) */
+  border-top: 1px solid #1e293b; /* línea de separación */
   box-shadow: 0 -14px 30px rgba(0, 0, 0, 0.35); /* separa visualmente */
 }
 
@@ -368,6 +368,26 @@ body.dark footer p {
   color: #94a3b8;
 }
 
+/* Link del footer (más visible y en naranja) */
+footer p a {
+  color: #f97316;            /* naranja del sitio */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer p a:hover {
+  color: #fb923c;            /* naranja más claro al hover */
+  text-decoration: underline;
+}
+
+body.dark footer p a {
+  color: #f97316;
+}
+
+body.dark footer p a:hover {
+  color: #fb923c;
+}
+
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -377,7 +397,7 @@ body.dark footer p {
   height: 140px;
   width: auto;
   display: block;
-  margin: 0.8rem auto 0;   /* sin margen negativo */
+  margin: 0.8rem auto 0; /* sin margen negativo */
 }
 
 /* Navegación del footer con la misma letra de los títulos */
@@ -429,10 +449,10 @@ footer p {
     font-size: 0.9rem;
   }
 
- /* Footer: Logotipo en celu (controlado) */
-.footer-Logotipo img {
-  height: 120px;
-}
+  /* Footer: Logotipo en celu (controlado) */
+  .footer-Logotipo img {
+    height: 120px;
+  }
 
   .footer-nav a {
     display: inline-block;
@@ -469,7 +489,6 @@ footer p {
   font-size: 1.5rem;
 }
 
-/* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -485,6 +504,14 @@ footer p {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   z-index: 1500;
+}
+
+/* SOLO CELULAR: un poco más arriba */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 90px;
+    right: 16px;
+  }
 }
 
 .whatsapp-float:hover {
@@ -717,23 +744,41 @@ header {
   }
 }
 
-/* Mobile: toggle en flujo, a la derecha */
+/* Mobile: toggle + hamburguesa alineados a la derecha */
 @media (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  /* Botón modo oscuro: a la derecha, antes del menú */
   header #darkToggle {
-    position: static;
-    transform: none;
+    position: absolute;
+    right: 56px; /* deja lugar para la hamburguesa */
+    top: 50%;
+    transform: translateY(-50%);
     width: 36px;
     height: 36px;
-    margin-left: auto;
+    margin-left: 0;
     border-radius: 9999px;
     border: 1px solid rgba(148, 163, 184, 0.6);
     background: rgba(15, 23, 42, 0.02);
     display: grid;
     place-items: center;
+    z-index: 3;
   }
 
   header #darkToggle:hover {
     background: rgba(15, 23, 42, 0.08);
+  }
+
+  /* Hamburguesa: pegada bien a la derecha */
+  .hamburger {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
   }
 }
 
@@ -946,17 +991,17 @@ section[id] {
   max-width: 900px;
 
   /* mucho menos aire, más cerca del título */
-    margin: 4.4rem auto 0.4rem;  /* más espacio entre párrafo y prmer línea */
+  margin: 4.4rem auto 0.4rem; /* más espacio entre párrafo y prmer línea */
 }
 
 /* Ajuste de padding para la sección de video en "¿Quiénes somos?" */
 .section.section-video {
-  padding-top: 0.5rem;   /* casi pegado al separador */
-  padding-bottom: 3rem;  /* un poco menos abajo también */
+  padding-top: 0.5rem; /* casi pegado al separador */
+  padding-bottom: 3rem; /* un poco menos abajo también */
 }
 
 .section.section-video h2 {
-  margin-top: 0;         /* elimina el margen extra del h2 */
+  margin-top: 0; /* elimina el margen extra del h2 */
 }
 
 /* ============================
