@@ -589,6 +589,7 @@ body.dark #darkToggle:hover {
     display: block;
   }
 
+  /* Panel del menú (LIGHT por default) */
   .nav ul {
     position: absolute;
     right: 1rem;
@@ -596,7 +597,7 @@ body.dark #darkToggle:hover {
     display: none;
     flex-direction: column;
     gap: 0.6rem;
-    background: #fff;
+    background: #ffffff;
     padding: 1rem;
     border-radius: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -606,10 +607,37 @@ body.dark #darkToggle:hover {
   .nav.open ul {
     display: flex;
   }
+
+  /* Submenu en mobile */
   .dropdown .submenu {
     position: static;
     box-shadow: none;
     border: 1px solid #e2e8f0;
+    background: transparent;
+  }
+
+  /* ===== DARK (solo mobile) ===== */
+  body.dark .nav ul {
+    background: #020617;               /* panel oscuro */
+    border: 1px solid #1e293b;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  }
+
+  body.dark .nav a {
+    color: #e5e7eb;                    /* links visibles */
+  }
+
+  body.dark .nav a:hover {
+    color: #f97316;                    /* hover naranja (coherente) */
+  }
+
+  body.dark .dropdown .submenu {
+    border-color: #1e293b;             /* borde oscuro del submenú */
+    background: transparent;           /* mismo panel, sin “caja distinta” */
+  }
+
+  body.dark .dropdown .submenu li a:hover {
+    background: #111827;               /* hover dentro del submenú */
   }
 }
 

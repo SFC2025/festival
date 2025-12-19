@@ -182,9 +182,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const nav = document.querySelector(".nav");
   if (hamburger && nav) {
-    hamburger.addEventListener("click", () => {
-      nav.classList.toggle("open");
+    // ===== MENU MOBILE: cerrar al tocar afuera + al tocar un link =====
+    const nav = document.querySelector(".nav");
+    const hamburger = document.querySelector(".hamburger");
+
+    if (nav && hamburger) {
+      // Toggle menú
+      hamburger.addEventListener("click", (e) => {
+        e.stopPropagation(); // evita que el click “cuente” como click afuera
+        nav.classList.toggle("open");
+      });
+
+      // Click afuera: cierra el menú
+      document.addEventListener("click", (e) => {
+        const clickDentroDelMenu = nav.contains(e.target);
+        const clickEnHamburguesa = hamburger.contains(e.target);
+
+        if (!clickDentroDelMenu && !clickEnHamburguesa) {
+          nav.classList.remove("open");
+        }
+      });
+
+      // Click en cualquier link del menú: cierra
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+        });
+      });
+    }
+    document.addEventListener("touchstart", (e) => {
+      const clickDentroDelMenu = nav.contains(e.target);
+      const clickEnHamburguesa = hamburger.contains(e.target);
+
+      if (!clickDentroDelMenu && !clickEnHamburguesa) {
+        nav.classList.remove("open");
+      }
     });
+
     nav.addEventListener("click", (e) => {
       if (e.target.closest("a")) nav.classList.remove("open");
     });
