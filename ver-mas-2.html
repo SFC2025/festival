@@ -1,0 +1,246 @@
+<!-- 
+ver-mas-2.html
+Detalle de noticia + columna de "Relacionados".
+Comparte header, style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrega de pañales - 37° Edición - 2025 - Festival Guadalupe</title>
+    <meta
+      name="description"
+      content="Entrega de pañales de la 37° Edición del Festival Folklórico de Guadalupe. Donaciones a Hospital Alassia y Neonatología del Iturraspe."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER (mismo que index) -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li><a href="index.html#ediciones">Ediciones anteriores</a></li>
+              <li><a href="index.html#sobre">¿Quiénes somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="section" style="padding-top: 7rem">
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1.6fr 0.9fr;
+          gap: 2rem;
+          align-items: start;
+          max-width: 1200px;
+          margin: 0 auto;
+        "
+      >
+        <!-- Artículo -->
+        <article>
+          <h1>Entrega de pañales - 37° Edición - 2025</h1>
+          <p style="color: #475569; margin: 0.25rem 0 1.25rem">
+            <strong>6 marzo, 2025</strong>
+          </p>
+
+          <!-- Imagen destacada opcional -->
+          <img
+            src="imagenes/todos.jpg"
+            alt="Entrega de pañales - 37° Edición - 2025"
+            style="
+              width: 100%;
+              height: auto;
+              border-radius: 0;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+              margin: 0 0 1.25rem;
+            "
+            loading="lazy"
+            decoding="async"
+          />
+
+          <!-- Texto con línea superior -->
+          <div
+            style="
+              border-top: 1px solid #e2e8f0;
+              padding-top: 1.5rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <p>Santa Fe, 6 de marzo de 2025.</p>
+
+            <p>
+              En la mañana de hoy, se concretó la entrega de pañales, en el
+              Hospital Orlando Alassia y en la Neonatología del Hospital
+              Iturraspe.
+            </p>
+            <p>
+              Una parte de los pañales fueron donados por la comunidad y público
+              en general, y otra, adquiridos con los fondos recaudados a través
+              de las alcancías que circularon durante las tres noches del 37°
+              Festival Folklórico de Guadalupe, realizado en enero del corriente
+              año.
+            </p>
+            <p>
+              Sumando un total de <strong>13.500 pañales</strong>, distribuidos
+              equitativamente entre ambos hospitales.
+            </p>
+            <p>
+              El Festival de Guadalupe es un lugar de encuentro, donde no solo
+              se reúnen las familias y amigos para celebrar nuestras
+              tradiciones, sino que también refleja el espíritu de solidaridad y
+              compromiso de nuestra comunidad.
+            </p>
+            <p>
+              Que nuestra Madre de Guadalupe nos conceda crecer en una
+              solidaridad guiada por la fe.
+            </p>
+
+            <p style="margin-top: 1rem">
+              <em>P. Olidio Panigo</em><br />Comisión Organizadora del Festival
+              Folklórico de Guadalupe.
+            </p>
+          </div>
+
+          <p style="margin-top: 1.5rem">
+            <a href="novedades.html" class="btn">Volver a Novedades</a>
+          </p>
+        </article>
+
+        <!-- Relacionados -->
+        <aside>
+          <h3 style="margin-bottom: 1rem">Relacionados</h3>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="¡Gracias por estos 20 años!"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3 style="font-size: 1rem; margin: 0.6rem 0.8rem 0">
+              ¡Gracias por estos 20 años!
+            </h3>
+            <p style="margin: 0.25rem 0.8rem 1rem; color: #475569">
+              Agradecimiento y cierre de ciclo de la comisión del festival…
+            </p>
+            <a
+              href="ver-mas-1.html"
+              class="btn-small"
+              style="margin: 0.2rem 0.8rem 1rem; display: inline-block"
+              >ver más</a
+            >
+          </article>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Entrega de pañales - 37° Edición"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3 style="font-size: 1rem; margin: 0.6rem 0.8rem 0">
+              Entrega de pañales - 37° Edición
+            </h3>
+            <p style="margin: 0.25rem 0.8rem 1rem; color: #475569">
+              Invitación a la entrega total de 13.350 pañales donados…
+            </p>
+            <a
+              href="ver-mas-3.html"
+              class="btn-small"
+              style="margin: 0.2rem 0.8rem 1rem; display: inline-block"
+              >ver más</a
+            >
+          </article>
+
+          <article class="card">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Tercera y última noche de la 37ª Edición"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3 style="font-size: 1rem; margin: 0.6rem 0.8rem 0">
+              Tercera y última noche de la 37ª Edición
+            </h3>
+            <p style="margin: 0.25rem 0.8rem 1rem; color: #475569">
+              La plaza Juan Pablo López colmada en una fiesta inolvidable…
+            </p>
+            <a
+              href="ver-mas-4.html"
+              class="btn-small"
+              style="margin: 0.2rem 0.8rem 1rem; display: inline-block"
+              >ver más</a
+            >
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

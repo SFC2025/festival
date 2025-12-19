@@ -1,0 +1,208 @@
+<!-- 
+contacto.html
+Página de contacto del Festival Guadalupe.
+Comparte header, style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Festival Guadalupe</title>
+    <meta
+      name="description"
+      content="Ubicación y formulario de contacto del Festival Folklórico de Guadalupe en Santa Fe, Argentina."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER (menú reducido) -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li>
+                <a href="ediciones-anteriores.html">Ediciones anteriores</a>
+              </li>
+              <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <main class="contact-page">
+      <!-- UBICACIÓN -->
+      <section class="section contact-section">
+        <div class="contact-wrapper">
+          <div class="contact-title-block">
+            <h1>Ubicación</h1>
+            <p>
+              El Festival Folklórico de Guadalupe se realiza en la
+              <strong>Basílica Nuestra Señora de Guadalupe</strong>, ciudad de
+              Santa Fe, Argentina.
+            </p>
+          </div>
+
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d-60.684!3d-31.629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBas%C3%ADlica%20de%20Guadalupe!5e0!3m2!1ses-419!2sar!4v1700000000000"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa Basílica de Guadalupe, Santa Fe"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="section contact-section contact-section-form">
+        <div class="contact-wrapper">
+          <div class="contact-title-block">
+            <h2>Contacto</h2>
+            <p>
+              Dej&aacute; tu consulta y la organizaci&oacute;n del festival se
+              pondr&aacute; en contacto a la brevedad.
+            </p>
+          </div>
+
+          <div class="contact-form-card">
+            <form
+              class="contact-form contact-form-grid"
+              action="https://formsubmit.co/santiagocossu20@gmail.com"
+              method="POST"
+            >
+              <!-- Config extra FormSubmit -->
+              <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nuevo mensaje desde el sitio del Festival Guadalupe"
+              />
+
+              <div class="contact-form-left">
+                <label>
+                  Nombre y Apellido
+                  <input
+                    type="text"
+                    name="nombre"
+                    autocomplete="name"
+                    required
+                  />
+                </label>
+
+                <label>
+                  E-mail
+                  <input
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Asunto
+                  <input type="text" name="asunto" required />
+                </label>
+              </div>
+
+              <div class="contact-form-right">
+                <label>
+                  Consulta
+                  <textarea
+                    name="mensaje"
+                    rows="7"
+                    placeholder="Contanos tu consulta, intención de colaboración o propuesta."
+                    required
+                  ></textarea>
+                </label>
+              </div>
+
+              <div class="contact-form-actions">
+                <button type="submit" class="btn">Enviar mensaje</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a
+      href="https://wa.me/3425009856"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <img src="imagenes/whatsapp-icon.png" alt="" class="whatsapp-icon" />
+    </a>
+  </body>
+</html>

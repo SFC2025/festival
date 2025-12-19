@@ -1,0 +1,244 @@
+<!--
+ver-mas-9.html
+Detalle de noticia: "Edición N° 37 – Año 2025"
+Comparte header, style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edición N° 37 – Año 2025 — Festival Guadalupe</title>
+    <meta
+      name="description"
+      content="Información de la 37ª Edición del Festival Folklórico de Guadalupe: fechas, horarios y grilla artística de las tres noches."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li><a href="index.html#ediciones">Ediciones anteriores</a></li>
+              <li><a href="index.html#sobre">¿Quiénes somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main
+      class="section"
+      style="padding-top: 7rem; border-bottom: 0 !important"
+    >
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1.6fr 0.9fr;
+          gap: 2rem;
+          align-items: start;
+          max-width: 1200px;
+          margin: 0 auto;
+        "
+      >
+        <!-- Artículo -->
+        <article>
+          <h1>Edición N° 37 – Año 2025</h1>
+          <p style="color: #475569; margin: 0.25rem 0 1.25rem">
+            <strong>16 diciembre, 2024</strong>
+          </p>
+
+          <!-- Imagen destacada -->
+          <img
+            src="imagenes/todos.jpg"
+            alt="Edición 37 del Festival Folklórico de Guadalupe"
+            style="
+              width: 100%;
+              height: auto;
+              border-radius: 0;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+              margin: 0 0 1.25rem;
+            "
+            loading="lazy"
+            decoding="async"
+          />
+
+          <!-- Texto con línea superior -->
+          <div
+            style="
+              border-top: 1px solid #e2e8f0;
+              padding-top: 1.5rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <p>
+              El <strong>Festival Folklórico de Guadalupe</strong> se llevará a
+              cabo los días <strong>17, 18 y 19 de enero de 2025</strong>, a
+              partir de las <strong>21.00 hs.</strong> en la explanada de la
+              Basílica.
+            </p>
+
+            <p><strong>GRILLA</strong></p>
+
+            <p><strong>Viernes 17/01</strong></p>
+            <p>
+              MARÍA EMILIA SOTTOCORNO (Himno Nacional Argentino y Canción a
+              Guadalupe)<br />
+              CIA. ARGENTINA DE DANZAS<br />
+              MARÍA EMILIA SOTTOCORNO<br />
+              VALENTÍN JESÚS ÁVILA “El ángel del acordeón”<br />
+              RAYANOS<br />
+              CEIBO
+            </p>
+
+            <p><strong>Sábado 18/01</strong></p>
+            <p>
+              MARÍA CUEVAS (Himno Nacional Argentino y Canción a Guadalupe)<br />
+              BALLET YAPEYÚ<br />
+              MARÍA CUEVAS<br />
+              BAGUALES<br />
+              LOS 4 DE CÓRDOBA<br />
+              LA CONTRA
+            </p>
+
+            <p><strong>Domingo 19/01</strong></p>
+            <p>
+              LOS CALDENES (Himno Nacional Argentino y Canción a Guadalupe)<br />
+              BALLET LA URDIMBRE<br />
+              KAREN<br />
+              LOS CALDENES<br />
+              AYMAREÑOS
+            </p>
+
+            <p>
+              Como todos los años, pedimos la colaboración de
+              <strong>pañales</strong> y
+              <strong>alimentos no perecederos</strong> para continuar con
+              nuestro principio solidario. La
+              <strong>entrada será gratuita</strong>.
+            </p>
+          </div>
+
+          <p style="margin-top: 1.5rem">
+            <a href="novedades.html" class="btn">Volver a Novedades</a>
+          </p>
+        </article>
+
+        <!-- Relacionados -->
+        <aside>
+          <h3 style="margin-bottom: 1rem">Relacionados</h3>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="¡Gracias por estos 20 años!"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                ¡Gracias por estos 20 años!
+              </h4>
+              <a class="btn-small" href="ver-mas-1.html">ver más</a>
+            </div>
+          </article>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Entrega de pañales - 37° Edición - 2025"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                Entrega de pañales - 37° Edición - 2025
+              </h4>
+              <a class="btn-small" href="ver-mas-2.html">ver más</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Entrega de pañales - 37° Edición"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                Entrega de pañales - 37° Edición
+              </h4>
+              <a class="btn-small" href="ver-mas-3.html">ver más</a>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

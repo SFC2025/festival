@@ -1,0 +1,271 @@
+<!-- 
+novedades.html
+Listado completo de novedades (se enlaza desde el menú y CTAs).
+Comparte el mismo style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novedades - Festival Guadalupe</title>
+    <meta
+      name="description"
+      content="Noticias y comunicados del Festival Folklórico de Guadalupe. Cronología completa de novedades."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER (mismo que index) -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li>
+                <a href="ediciones-anteriores.html">Ediciones anteriores</a>
+              </li>
+              <li><a href="quienes-somos.html">¿Quiénes Somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="section" style="padding-top: 7rem">
+      <h1 style="margin-bottom: 1rem">Novedades</h1>
+      <p style="color: #475569; max-width: 780px; margin: 0 auto 2rem">
+        Enterate de todas las noticias y comunicados del Festival de Guadalupe.
+      </p>
+
+      <div class="grid">
+        <!-- EJEMPLOS (podés duplicar/editar) -->
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Escenario del festival"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>¡Gracias por estos 20 años!</h3>
+          <p>
+            Santa Fe de la Vera Cruz, 6 de octubre de 2025. Llegamos al ocaso de
+            un camino que recorrimos con el corazón. Han sido veinte años...
+          </p>
+          <a href="ver-mas-1.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Entrega de pañales"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Entrega de pañales - 37° Edición - 2025</h3>
+          <p>
+            Santa Fe, 6 de marzo de 2025. Se concretó la entrega de pañales en
+            el Hospital Orlando Alassia y en la Neonatología del Hospital
+            Iturraspe...
+          </p>
+          <a href="ver-mas-2.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Basílica iluminada"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Entrega de pañales - 37° Edición</h3>
+          <p>
+            Porque son parte importante de esta cadena solidaria, los invitamos
+            a la entrega total de 13.350 pañales donados...
+          </p>
+          <a href="ver-mas-3.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Basílica en rojo"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Tercera y última noche de la 37ª Edición</h3>
+          <p>
+            La plaza Juan Pablo López se colmó de público en la tercera noche
+            del Festival Folklórico de Guadalupe; una verdadera fiesta...
+          </p>
+          <a href="ver-mas-4.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Segunda noche"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Segunda Noche de la 37ª Edición</h3>
+          <p>
+            A pesar del clima, la segunda noche fue una celebración con más de
+            15.000 personas presentes...
+          </p>
+          <a href="ver-mas-5.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Suspensión de la 2da. Noche del Festival"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>
+            Suspensión de la 2da. Noche del Festival Folklórico de Guadalupe
+          </h3>
+          <p>
+            Debido a condiciones climáticas adversas, se suspendió la 2da noche
+            con el fin de salvaguardar a todos los presentes...
+          </p>
+          <a href="ver-mas-6.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Anuncio oficial"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Se presentó oficialmente la edición N° 37</h3>
+          <p>
+            Conferencia de prensa para anunciar la nueva edición “Un Canto
+            Solidario” y los detalles de programación...
+          </p>
+          <a href="ver-mas-7.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Comunicado de prensa"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Conferencia de prensa 37° Edición - Año 2025</h3>
+          <p>
+            Comunicado de prensa: fechas, horarios y lineamientos generales del
+            festival para este año...
+          </p>
+          <a href="ver-mas-8.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Cartel edición 2025"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Edición N° 37 – Año 2025</h3>
+          <p>
+            El festival se llevará a cabo los días 17, 18 y 19 de enero a partir
+            de las 21.00 hs, en la explanada de la Basílica...
+          </p>
+          <a href="ver-mas-9.html" class="btn-small">ver más</a>
+        </article>
+
+        <article class="card">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Entrega 2024"
+            loading="lazy"
+            decoding="async"
+          />
+          <h3>Entrega de pañales y alimentos - 36° Edición - 2024</h3>
+          <p>
+            Agradecimiento a quienes acompañaron las tres noches del festival
+            2024 y colaboraron con donaciones...
+          </p>
+          <a href="ver-mas-10.html" class="btn-small">ver más</a>
+        </article>
+      </div>
+
+      <!-- Paginación simple (si la necesitás más adelante) -->
+      <!--
+      <nav class="pagination" style="margin-top:2rem;display:flex;gap:.5rem;justify-content:center">
+        <a class="btn-small" href="#">« Anterior</a>
+        <span style="padding:.4rem .8rem;border:1px solid #e2e8f0">1</span>
+        <a class="btn-small" href="#">2</a>
+        <a class="btn-small" href="#">Siguiente »</a>
+      </nav>
+      -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

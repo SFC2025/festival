@@ -1,0 +1,225 @@
+<!-- 
+quienes-somos.html
+Página "¿Quiénes somos?" del Festival Guadalupe.
+Comparte header, style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Quiénes somos? - Festival Guadalupe</title>
+    <meta
+      name="description"
+      content="Conocé la historia del Festival Folklórico de Guadalupe, nuestra canción y el espíritu solidario que nos reúne cada año."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li>
+                <a href="ediciones-anteriores.html">Ediciones anteriores</a>
+              </li>
+              <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <main>
+      <!-- SECCIÓN PRINCIPAL: TÍTULO + IMAGEN + TEXTO -->
+      <section class="section" style="max-width: 900px; text-align: left">
+        <h1 style="text-align: center; margin-bottom: 2rem">¿Quiénes somos?</h1>
+
+        <figure style="margin-bottom: 2rem">
+          <img
+            src="imagenes/todos.jpg"
+            alt="Festival Folklórico de Guadalupe"
+            style="width: 100%; height: auto; display: block"
+          />
+        </figure>
+
+        <p>
+          El <strong>Festival Folklórico de Guadalupe</strong> es un espacio de
+          fe, comunidad y música popular que reúne, desde hace décadas, a miles
+          de personas en torno a la Basílica de Nuestra Señora de Guadalupe.
+        </p>
+        <p>
+          Vecinos, instituciones y artistas se unen cada año para sostener esta
+          tradición solidaria, que busca acompañar a los que más lo necesitan y
+          mantener viva la identidad cultural de nuestro barrio y de la ciudad.
+        </p>
+
+        <!-- Separador naranja entre el texto y el video -->
+        <div class="section-divider"></div>
+      </section>
+
+      <!-- VIDEO -->
+      <section class="section section-video" style="max-width: 900px">
+        <h2>30 años del Festival Folklórico de Guadalupe</h2>
+
+        <div
+          style="
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+          "
+        >
+          <iframe
+            src="https://www.youtube.com/embed/X1LRlFOXmic"
+            title="30 años Festival Folklórico de Guadalupe"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Separador naranja entre el video y "Nuestra Canción" -->
+      <div class="section-divider"></div>
+
+      <!-- NUESTRA CANCIÓN + LETRA + AUDIO -->
+      <section
+        class="section song-lyrics"
+        style="max-width: 900px; text-align: left"
+      >
+        <h2 style="margin-bottom: 1rem">Nuestra Canción</h2>
+
+        <p>
+          Hay un pedazo de suelo santafesino<br />
+          para el tiempo de los ceibos lo vuelvo a ver<br />
+          como una flor nocturna encendida el verano<br />
+          y una iglesia que suelta campanas de bronce al amanecer
+        </p>
+
+        <p>
+          Guadalupe, Guadalupe<br />
+          rinconcito de suelo santafesino de mi querer<br />
+          Guadalupe, Guadalupe<br />
+          quiera Dios que el destino me vuelva pronto hasta Santa Fe
+        </p>
+
+        <p>
+          Un cielo de esperanza tiene en su canto<br />
+          Guadalupe la linda de Santa Fe<br />
+          con su gente de fiesta alegrando las calles<br />
+          con un río de fieles que sueñan un tiempo de paz y de fé
+        </p>
+
+        <p>
+          Guadalupe, Guadalupe<br />
+          rinconcito de suelo santafesino de mi querer<br />
+          Guadalupe, Guadalupe<br />
+          quiera Dios que el destino me vuelva pronto hasta Santa Fe
+        </p>
+
+        <p><strong>Autor:</strong> Daniel Toro</p>
+
+        <div style="margin-top: 1.5rem">
+          <audio controls style="width: 100%">
+            <source src="audio/cancion-a-guadalupe.mp3" type="audio/mpeg" />
+            Tu navegador no soporta la reproducción de audio.
+          </audio>
+
+          <p style="margin-top: 0.75rem; font-size: 0.95rem">
+            También podés escucharla en
+            <a
+              href="https://youtu.be/rhPrFQKkU2A"
+              target="_blank"
+              rel="noopener"
+            >
+              YouTube </a
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP (opcional, igual que en index) -->
+    <a
+      href="https://wa.me/3425009856"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <img src="imagenes/whatsapp-icon.png" alt="" class="whatsapp-icon" />
+    </a>
+  </body>
+</html>

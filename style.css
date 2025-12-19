@@ -1,0 +1,992 @@
+/* 
+style.css
+Editar colores y fuentes si se desea personalizar el estilo
+Paleta base: primario #0F172A, texto #475569, fondo #F8FAFC, CTA #3B82F6, acento #10B981
+*/
+
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset extra de listas para evitar viñetas en cualquier nav */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-headings: "Marcellus", "Times New Roman", serif;
+  --font-alt: "Cormorant Garamond", "Times New Roman", serif; /* opcional p/ H1 hero */
+  --font-body: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+/* Header compacto; permito que el Logotipo “flote” sin agrandar la barra */
+header {
+  position: sticky; /* antes: fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Logotipo a la izquierda */
+  padding: 0 1.25rem;
+  padding-right: 88px; /* reserva para el toggle */
+  height: 72px;
+  overflow: visible;
+  z-index: 1000;
+}
+
+/* Logotipo del header: tamaño más chico y estable */
+.Logotipo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  position: relative;
+  transform: translateY(0); /* ya no lo “levantamos” tanto */
+}
+
+.Logotipo img {
+  height: 64px; /* tamaño fijo y razonable */
+  width: auto;
+  display: block;
+}
+
+/* El Logotipo ahora es imagen: no necesitamos color al span */
+.Logotipo span {
+  display: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.nav li {
+  position: relative;
+}
+.nav > ul > li > a {
+  white-space: nowrap;
+}
+
+.dropdown .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  display: none;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1100;
+}
+
+.dropdown .submenu li a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  color: #0f172a;
+  text-decoration: none;
+}
+.dropdown .submenu li a:hover {
+  background: #f1f5f9;
+}
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.4rem 0.6rem; /* compacidad del menú */
+}
+
+.nav a:hover {
+  color: #3b82f6;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* HERO ESTÁTICO (usa background-image directamente en la <section>) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Si en el futuro volvés a usar slider, estas clases siguen sirviendo,
+   pero ahora no son necesarias para el hero estático */
+.hero .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.hero .slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  background: rgba(15, 23, 42, 0.6);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  max-width: 400px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cta-group .btn,
+.cta-group .btn-secondary {
+  flex: 1 1 0; /* mismo ancho para ambos dentro del grupo */
+}
+
+.btn,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Unificar tamaño y tipo de letra entre <a> y <button> */
+  font-family: inherit; /* hereda la de body (Poppins) */
+  font-size: 1rem; /* mismo tamaño para los dos */
+  line-height: 1.2;
+  border: none; /* limpia el borde por defecto del <button> */
+}
+
+.btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+.btn-secondary {
+  background: #10b981;
+  color: #fff;
+}
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* SECCIONES */
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.section.alt {
+  background: #f1f5f9;
+}
+h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+/* Títulos con serif elegante */
+h1,
+h2,
+h3,
+.section h2 {
+  font-family: var(--font-headings);
+  font-weight: 400;
+  letter-spacing: 0.3px; /* sutil, da aire clásico */
+}
+
+/* Hero principal aún más “eclesiástico” (opcional) */
+.hero-content h1,
+.hero-content h2 {
+  font-family: var(--font-alt); /* usa Cormorant p/ un look más litúrgico */
+  font-weight: 600; /* 600 para presencia */
+  letter-spacing: 0.2px;
+  line-height: 1.15;
+}
+
+/* Menú centrado con serif y mayúsculas suaves */
+.nav a {
+  font-family: var(--font-headings);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.6px; /* “placa” refinada de menú */
+  font-size: 0.96rem; /* leve ajuste óptico */
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.grid.three {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* CARDS */
+.card,
+.service-card {
+  background: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.card:hover,
+.service-card:hover {
+  transform: translateY(-4px);
+}
+.card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 0.8rem 0.8rem 0.4rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+.card p {
+  margin: 0 0.8rem 1rem;
+  color: #475569;
+}
+.btn-small {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* TESTIMONIOS */
+.testimonial {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  font-style: italic;
+}
+.testimonial cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.testimonial,
+.card h3 {
+  font-family: var(--font-headings);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* CONTACTO */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0;
+}
+
+.contact-form button {
+  align-self: center;
+}
+
+footer {
+  background: #0f172a;
+  color: #fff;
+  text-align: center;
+  padding: 0rem 1rem 1rem; /* sin padding arriba, poco abajo */
+}
+
+/* DARK: que el footer se distinga del resto */
+body.dark footer {
+  background: #020617;              /* más oscuro que el body (#0f172a) */
+  border-top: 1px solid #1e293b;    /* línea de separación */
+  box-shadow: 0 -14px 30px rgba(0, 0, 0, 0.35); /* separa visualmente */
+}
+
+body.dark .footer-nav a {
+  color: #e2e8f0;
+}
+
+body.dark .footer-nav a:hover {
+  color: #f97316;
+}
+
+body.dark footer p {
+  color: #94a3b8;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-Logotipo img {
+  height: 140px;
+  width: auto;
+  display: block;
+  margin: 0.8rem auto 0;   /* sin margen negativo */
+}
+
+/* Navegación del footer con la misma letra de los títulos */
+footer nav {
+  margin: 0 0 0.15rem; /* menos espacio aún */
+}
+.footer-nav a {
+  color: #e5e7eb;
+  margin: 0 1.1rem; /* más separación entre items */
+  text-decoration: none;
+  font-family: var(--font-headings); /* misma que h1/h2/h3 */
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-size: 1.02rem; /* más grande que 0.9rem */
+}
+
+.footer-nav a:hover {
+  color: #f97316; /* toquecito de énfasis al pasar el mouse */
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0.1rem 0 0;
+  line-height: 1.2;
+}
+
+/* Ajuste en pantallas chicas para que no se rompa */
+@media (max-width: 600px) {
+  /* HERO en celular: centrado y sin cortar a la derecha */
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+    width: calc(100% - 2.5rem); /* margencito a los costados */
+    max-width: 420px;
+    padding: 1.1rem 1.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+ /* Footer: Logotipo en celu (controlado) */
+.footer-Logotipo img {
+  height: 120px;
+}
+
+  .footer-nav a {
+    display: inline-block;
+    margin: 0.25rem 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.modal-content button#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #22c55e;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  z-index: 1500;
+}
+
+.whatsapp-float:hover {
+  background: #16a34a;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Header y secciones alternas un poco más oscuras */
+body.dark header,
+body.dark .modal-content {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .section.alt {
+  background: #020617;
+}
+
+/* Cards en dark */
+body.dark .card,
+body.dark .service-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+/* Menú principal en modo oscuro */
+body.dark .nav a {
+  color: #e5e7eb;
+}
+
+body.dark .nav a:hover {
+  color: #38bdf8; /* celeste sutil para hover */
+}
+
+/* Submenú Festival en modo oscuro */
+body.dark .dropdown .submenu {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark .dropdown .submenu li a {
+  color: #e5e7eb;
+}
+
+body.dark .dropdown .submenu li a:hover {
+  background: #111827;
+}
+
+/* Botón de modo oscuro cuando el sitio YA está oscuro */
+body.dark #darkToggle {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(148, 163, 184, 0.9);
+  color: #e5e7eb;
+}
+
+body.dark #darkToggle:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav ul {
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    display: none;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1200;
+  }
+
+  .nav.open ul {
+    display: flex;
+  }
+  .dropdown .submenu {
+    position: static;
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+  }
+}
+
+header {
+  z-index: 1300;
+}
+
+@media (max-width: 768px) {
+  header {
+    top: 0;
+    height: 64px; /* un poco más de barra para respiración */
+  }
+  .Logotipo {
+    transform: translateY(-2px); /* o 0px si lo querés alineado exacto */
+  }
+  .Logotipo img {
+    height: clamp(52px, 12vw, 60px); /* presencia clara sin tapar nada */
+  }
+}
+
+/* Desktop: Logotipo del header (controlado, no gigante) */
+@media (min-width: 769px) {
+  .Logotipo {
+    transform: translateY(0);
+  }
+
+  .Logotipo img {
+    height: 64px; /* tamaño normal en desktop */
+    width: auto;
+  }
+}
+
+/* — Centrado óptico del menú en desktop — */
+@media (min-width: 769px) {
+  header {
+    position: sticky; /* antes: relative */
+    top: 0;
+    z-index: 1300; /* por encima del contenido */
+  } /* ancla para posicionar el nav */
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(calc(-50% + 4px));
+    z-index: 2;
+  }
+
+  .nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem; /* un pelín más de aire */
+  }
+
+  header .theme-toggle,
+  header #themeToggle,
+  header .mode-toggle,
+  header .dark-toggle {
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Afinado desktop (sin agrandar el logo) */
+@media (min-width: 769px) {
+  .Logotipo {
+    transform: translateY(0);
+  }
+  .Logotipo img {
+    height: 64px;
+    width: auto;
+  }
+}
+
+/* Mobile: logo del header más chico */
+@media (max-width: 768px) {
+  .nav {
+    position: static;
+    transform: none;
+  }
+  .nav ul {
+    justify-content: center;
+  }
+  .Logotipo {
+    transform: translateY(0);
+  }
+  .Logotipo img {
+    height: 52px; /* tamaño normal en mobile */
+    width: auto;
+  }
+}
+
+/* — Botón modo oscuro/claro: estilo consistente — */
+@media (min-width: 769px) {
+  header {
+    position: sticky; /* antes: relative */
+    top: 0;
+    z-index: 1300;
+  }
+
+  header #darkToggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    cursor: pointer;
+    z-index: 3;
+    outline: none;
+    font-size: 0.95rem;
+  }
+
+  header #darkToggle:hover {
+    background: rgba(15, 23, 42, 0.08);
+  }
+
+  header #darkToggle:focus-visible {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+}
+
+/* Mobile: toggle en flujo, a la derecha */
+@media (max-width: 768px) {
+  header #darkToggle {
+    position: static;
+    transform: none;
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+    border-radius: 9999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: rgba(15, 23, 42, 0.02);
+    display: grid;
+    place-items: center;
+  }
+
+  header #darkToggle:hover {
+    background: rgba(15, 23, 42, 0.08);
+  }
+}
+
+/* ============================
+   CONTACTO / UBICACIÓN (contacto.html)
+   ============================ */
+
+.contact-page {
+  padding-top: 110px; /* espacio para el header fijo */
+  background: #f8fafc; /* mismo fondo base del sitio */
+}
+
+/* Secciones de contacto con ancho máximo controlado */
+.contact-section {
+  padding: 4.5rem 1.5rem;
+}
+
+.contact-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Bloque de títulos e intro */
+.contact-title-block {
+  margin-bottom: 2rem;
+}
+
+.contact-title-block h1,
+.contact-title-block h2 {
+  margin-bottom: 0.35rem;
+}
+
+.contact-title-block p {
+  max-width: 640px;
+  color: #64748b;
+}
+
+/* Mapa embebido con card elegante pero recta */
+.contact-map {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+  background: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+}
+
+/* Card del formulario */
+.contact-section-form {
+  background: #f1f5f9; /* igual que otras secciones .alt */
+}
+
+.contact-form-card {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.16);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* barra decorativa superior, mantiene detalle moderno */
+.contact-form-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0f172a, #3b82f6, #10b981);
+}
+
+/* Grid dos columnas en desktop */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.4fr);
+  gap: 1.75rem 2.25rem;
+  align-items: flex-start;
+}
+
+/* Etiquetas y campos */
+.contact-form-grid label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.contact-form-grid input,
+.contact-form-grid textarea {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font: inherit;
+  color: #0f172a;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s,
+    transform 0.08s;
+}
+
+/* textarea */
+.contact-form-grid textarea {
+  resize: vertical;
+  min-height: 220px;
+}
+
+/* estados focus */
+.contact-form-grid input:focus,
+.contact-form-grid textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Botón alineado a la derecha */
+.contact-form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.contact-form-actions .btn {
+  min-width: 200px;
+}
+
+/* Ajustes responsive */
+@media (max-width: 900px) {
+  .contact-form-card {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-form-grid textarea {
+    min-height: 190px;
+  }
+
+  .contact-form-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-map iframe {
+    height: 320px;
+  }
+
+  .contact-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .contact-form-card {
+    padding: 1.6rem 1.3rem;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 0; /* SIN bordes redondeados */
+  padding: 1.1rem 1.2rem 1.2rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+  /* Guioncito inferior */
+  border-bottom: 6px solid #f97316;
+
+  /* La card se vuelve flex en columna */
+  display: flex;
+  flex-direction: column;
+}
+
+/* El texto ocupa el espacio flexible */
+.card p {
+  margin: 0 0.8rem 0.8rem;
+  color: #475569;
+  line-height: 1.4; /* menos aire vertical que el body (1.6) */
+  flex: 1;
+}
+
+/* El botón "ver más" queda siempre abajo, con margen */
+.card .btn-small {
+  display: inline-block;
+  margin: 0 0.8rem 0.8rem;
+  margin-top: auto; /* lo empuja al borde inferior de la card */
+}
+
+/* Evitar que el header fijo tape los títulos al saltar a una sección */
+section[id] {
+  scroll-margin-top: 90px; /* altura aproximada del header */
+}
+
+/* Separador naranja de secciones (¿Quiénes somos?) */
+.section-divider {
+  height: 3px;
+  background-color: #f97316; /* mismo naranja de las cards */
+  max-width: 900px;
+
+  /* mucho menos aire, más cerca del título */
+    margin: 4.4rem auto 0.4rem;  /* más espacio entre párrafo y prmer línea */
+}
+
+/* Ajuste de padding para la sección de video en "¿Quiénes somos?" */
+.section.section-video {
+  padding-top: 0.5rem;   /* casi pegado al separador */
+  padding-bottom: 3rem;  /* un poco menos abajo también */
+}
+
+.section.section-video h2 {
+  margin-top: 0;         /* elimina el margen extra del h2 */
+}
+
+/* ============================
+   DARK MODE (fix cards ediciones)
+   ============================ */
+
+/* Títulos dentro de cards (incluye los años si están como h3) */
+body.dark .card h3,
+body.dark .service-card h3 {
+  color: #f8fafc;
+}
+
+/* Texto de las cards (el gris claro que te queda apagado) */
+body.dark .card p,
+body.dark .service-card p {
+  color: #e2e8f0;
+}
+
+/* Links dentro de cards (incluye los años si son <a>) */
+body.dark .card a,
+body.dark .service-card a {
+  color: #93c5fd;
+}
+
+body.dark .card a:hover,
+body.dark .service-card a:hover {
+  color: #38bdf8;
+}
+
+/* El "ver más" también queda coherente */
+body.dark .card .btn-small {
+  color: #93c5fd;
+}

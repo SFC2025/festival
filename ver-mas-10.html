@@ -1,0 +1,253 @@
+<!-- 
+ver-mas-10.html
+Detalle de noticia + columna de "Relacionados".
+Comparte header, style.css y script.js del proyecto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Entrega de pañales y alimentos – 36° Edición – 2024 - Festival Guadalupe
+    </title>
+    <meta
+      name="description"
+      content="Agradecimiento y detalle de la entrega de pañales y alimentos del Festival Folklórico de Guadalupe — 36° Edición (2024)."
+    />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER (mismo que index) -->
+    <header id="header">
+      <a class="Logotipo" href="index.html#inicio" aria-label="Ir al inicio">
+        <img
+          src="imagenes/Logotipo.png"
+          alt="Festival Guadalupe"
+          width="160"
+          height="48"
+          decoding="async"
+        />
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <li class="dropdown">
+            <a href="index.html#festival">Festival</a>
+            <ul class="submenu">
+              <li><a href="novedades.html">Novedades</a></li>
+              <li><a href="index.html#ediciones">Ediciones anteriores</a></li>
+              <li><a href="index.html#sobre">¿Quiénes somos?</a></li>
+            </ul>
+          </li>
+
+          <li><a href="penias.html">Peñas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkToggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú">☰</div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main
+      class="section"
+      style="padding-top: 7rem; border-bottom: 0 !important"
+    >
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1.6fr 0.9fr;
+          gap: 2rem;
+          align-items: start;
+          max-width: 1200px;
+          margin: 0 auto;
+        "
+      >
+        <!-- Artículo -->
+        <article>
+          <h1>Entrega de pañales y alimentos – 36° Edición – 2024</h1>
+          <p style="color: #475569; margin: 0.25rem 0 1.25rem">
+            <strong>23 febrero, 2024</strong>
+          </p>
+
+          <!-- Imagen destacada -->
+          <img
+            src="imagenes/todos.jpg"
+            alt="Entrega de pañales y alimentos — 36° Edición — 2024"
+            style="
+              width: 100%;
+              height: auto;
+              border-radius: 0;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+              margin: 0 0 1.25rem;
+            "
+            loading="lazy"
+            decoding="async"
+          />
+
+          <!-- Texto con línea superior -->
+          <div
+            style="
+              border-top: 1px solid #e2e8f0;
+              padding-top: 1.5rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <p>Santa Fe, febrero 2024.</p>
+
+            <p>
+              Desde la comisión queremos agradecer a quienes compartieron las
+              tres noches del Festival Folklórico de Guadalupe durante el mes de
+              enero y por ser parte de este “canto solidario”, enalteciéndolo
+              con gestos fraternos que se materializaron en importantes
+              cantidades de alimentos y pañales, a pesar de la situación que
+              estamos viviendo.
+            </p>
+
+            <p>
+              Con los alimentos que se entregaron a Cáritas, se podrá colaborar
+              durante cinco meses con los cincuenta bolsones que se distribuyen
+              entre las familias más necesitadas y la Casa Francisco Javier de
+              la Rosa, donde se encuentran jóvenes de la calle o de escasos
+              recursos, iniciando un proceso de recuperación de adicciones y
+              reinserción a la sociedad.
+            </p>
+
+            <p>
+              El día viernes 23 de febrero, con la alegría de la ”misión
+              cumplida”, se entregaron pañales al Hospital de Niños y la Sala de
+              Neonatología del Hospital Iturraspe.
+            </p>
+
+            <p>
+              Este año, con el objetivo de que todos colaboren, circularon
+              durante el festival alcancías para la compra de pañales; se
+              recolectaron <strong>$ 1.080.000</strong>, y sumado al aporte del
+              festival se compraron <strong>8.220 pañales</strong> que, junto a
+              los donados, totalizaron <strong>10.000 pañales</strong>.
+            </p>
+
+            <p>
+              También hicimos entrega de 15 paquetes de pañales al Padre Gazze,
+              Párroco en el barrio Santa Rosa de Lima de nuestra ciudad, para
+              dos niños de 8 y 9 años con capacidades diferentes de su
+              comunidad.
+            </p>
+
+            <p>
+              La gratitud es la memoria del corazón, es la satisfacción de poder
+              ayudar. Muchas gracias y que nuestra Madre de Guadalupe los
+              bendiga.
+            </p>
+
+            <p>
+              <em
+                >P. Olidio Panigo y Comisión Organizadora del Festival
+                Folklórico de Guadalupe.</em
+              >
+            </p>
+          </div>
+
+          <p style="margin-top: 1.5rem">
+            <a href="novedades.html" class="btn">Volver a Novedades</a>
+          </p>
+        </article>
+
+        <!-- Relacionados -->
+        <aside>
+          <h3 style="margin-bottom: 1rem">Relacionados</h3>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Edición N° 37 – Año 2025"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                Edición N° 37 – Año 2025
+              </h4>
+              <a class="btn-small" href="ver-mas-9.html">ver más</a>
+            </div>
+          </article>
+
+          <article class="card" style="margin-bottom: 1rem">
+            <img
+              src="imagenes/todos.jpg"
+              alt="Entrega de pañales - 37° (2025)"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                Entrega de pañales - 37° (2025)
+              </h4>
+              <a class="btn-small" href="ver-mas-2.html">ver más</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="imagenes/todos.jpg"
+              alt="¡Gracias por estos 20 años!"
+              loading="lazy"
+              decoding="async"
+            />
+            <div style="padding: 0.75rem 1rem">
+              <h4 style="font-family: var(--font-headings); font-weight: 400">
+                ¡Gracias por estos 20 años!
+              </h4>
+              <a class="btn-small" href="ver-mas-1.html">ver más</a>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-Logotipo">
+          <img
+            src="imagenes/Logotipo.png"
+            alt="Festival Guadalupe - Un canto solidario"
+            width="260"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#festival">Festival</a>
+          <a href="penias.html">Peñas</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <p>
+          © 2025 Festival Guadalupe — Desarrollado por
+          <a
+            href="https://santiagof2-cyber.github.io/SantiCossuWeb/index.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Scossu
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
